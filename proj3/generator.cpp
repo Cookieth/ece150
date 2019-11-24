@@ -5,7 +5,7 @@
 int main() {
     std::random_device seed;
     std::mt19937 randEngine(seed());
-    std::uniform_int_distribution<int> entries(0, 20);
+    std::uniform_int_distribution<int> entries(0, 100);
 
     std::fstream file;
 
