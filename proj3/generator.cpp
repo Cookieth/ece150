@@ -18,8 +18,6 @@ int main() {
     }
 
     std::cout << "File Created." << std::endl;
-
-    double netBuy = 0;
     
     for(int i = 0; i < entries(randEngine); i++) {
         std::uniform_int_distribution<int> date(0, 30);
