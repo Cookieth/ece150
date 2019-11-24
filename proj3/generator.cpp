@@ -5,7 +5,7 @@
 int main() {
     std::random_device seed;
     std::mt19937 randEngine(seed());
-    std::uniform_int_distribution<int> entries(0, 60);
+    std::uniform_int_distribution<int> entries(0, 20);
 
     std::fstream file;
 
@@ -19,19 +19,30 @@ int main() {
 
     std::cout << "File Created." << std::endl;
 
+    double netBuy = 0;
+    
     for(int i = 0; i < entries(randEngine); i++) {
         std::uniform_int_distribution<int> date(0, 30);
         std::uniform_int_distribution<int> month(1, 12);
-        std::uniform_int_distribution<int> year(2012, 2019);
-        std::uniform_int_distribution<double> paid(0, 10000);
+        std::uniform_int_distribution<int> year(1999, 2019);
+        std::uniform_int_distribution<double> paidBought(5000, 10000);
+        std::uniform_int_distribution<double> paidSold(0, 5000);
         std::uniform_int_distribution<int> shares(0, 300);
-        std::uniform_int_distribution<int> buySell(0, 1);
+        std::uniform_int_distribution<int> buySell(0, 2);
 
-        file << "ABCD " << date(randEngine) << " " << month(randEngine) << " " << year(randEngine) << " "
-                  << ((buySell(randEngine)) ? "Buy " : "Sell ") << shares(randEngine) << " "
-                  << paid(randEngine) << std::endl;
+        int transTypeVal = (buySell(randEngine));
+
+        if(transTypeVal == 0){
+            file << "ABCD " << date(randEngine) << " " << month(randEngine) << " " << year(randEngine) << " "
+                    << "Sell " << shares(randEngine) << " "
+                    << paidBought(randEngine) << std::endl;
+        }
+        else{
+            file << "ABCD " << date(randEngine) << " " << month(randEngine) << " " << year(randEngine) << " "
+                    << "Buy " << shares(randEngine) << " "
+                    << paidSold(randEngine) << std::endl;
+        }
     }
-
     file.close();
     return 0;
 }
