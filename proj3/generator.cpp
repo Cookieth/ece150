@@ -35,12 +35,12 @@ int main() {
         if(transTypeVal == 0){
             file << "ABCD " << date(randEngine) << " " << month(randEngine) << " " << year(randEngine) << " "
                     << "Sell " << shares(randEngine) << " "
-                    << paidBought(randEngine) << std::endl;
+                    << paidSold(randEngine) << std::endl;
         }
         else{
             file << "ABCD " << date(randEngine) << " " << month(randEngine) << " " << year(randEngine) << " "
                     << "Buy " << shares(randEngine) << " "
-                    << paidSold(randEngine) << std::endl;
+                    << paidBought(randEngine) << std::endl;
         }
     }
     file.close();
