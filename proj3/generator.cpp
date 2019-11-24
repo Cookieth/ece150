@@ -5,7 +5,7 @@
 int main() {
     std::random_device seed;
     std::mt19937 randEngine(seed());
-    std::uniform_int_distribution<int> entries(10, 100);
+    std::uniform_int_distribution<int> entries(50, 200);
 
     std::fstream file;
 
@@ -27,7 +27,7 @@ int main() {
         std::uniform_int_distribution<double> paidBought(5000, 10000);
         std::uniform_int_distribution<double> paidSold(0, 5000);
         std::uniform_int_distribution<int> shares(0, 300);
-        std::uniform_int_distribution<int> buySell(0, 2);
+        std::uniform_int_distribution<int> buySell(0, 4);
 
         int transTypeVal = (buySell(randEngine));
 
