@@ -1,4 +1,4 @@
-#include <iostream>
+s#include <iostream>
 #include <random>
 #include <fstream>
 
@@ -24,8 +24,8 @@ int main() {
         std::uniform_int_distribution<int> month(1, 12);
         std::uniform_int_distribution<int> buyYear(1999, 2019);
         std::uniform_int_distribution<int> sellYear(2010, 2019);
-        std::uniform_int_distribution<double> paidBought(5000, 10000);
-        std::uniform_int_distribution<double> paidSold(0, 5000);
+        std::uniform_real_distribution<double> paidBought(5000, 10000);
+        std::uniform_real_distribution<double> paidSold(0, 5000);
         std::uniform_int_distribution<int> shares(0, 300);
         std::uniform_int_distribution<int> buySell(0, 4);
 
